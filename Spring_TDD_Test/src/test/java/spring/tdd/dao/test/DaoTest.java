@@ -7,6 +7,8 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
+import org.springframework.test.annotation.Commit;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,6 +24,7 @@ public class DaoTest {
 	
 	@Autowired
 	@Qualifier(value="hibernateUserDaoImpWithDaoSupport")
+//	@Qualifier(value="hibernateUserDaoImp")
 	IUserDao userDao;
 	
 	@Autowired
