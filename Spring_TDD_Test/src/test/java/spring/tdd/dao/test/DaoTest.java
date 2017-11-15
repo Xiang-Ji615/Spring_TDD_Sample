@@ -2,6 +2,8 @@ package test.java.spring.tdd.dao.test;
 
 import static org.junit.Assert.assertNotNull;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +40,7 @@ public class DaoTest {
 		userDao.saveUser(user);
 //		if(true)
 //		throw new Exception("JJ e");
-		assertNotNull(userDao.listUser());
+		List<User> users = userDao.listUserWithSQL();
+		assertNotNull(users);
 	}
 }

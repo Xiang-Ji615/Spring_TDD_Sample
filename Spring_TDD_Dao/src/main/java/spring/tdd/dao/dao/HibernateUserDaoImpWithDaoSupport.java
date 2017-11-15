@@ -1,7 +1,6 @@
 package main.java.spring.tdd.dao.dao;
 
-import java.util.List;
-
+import java.util.List;import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
@@ -26,6 +25,13 @@ public class HibernateUserDaoImpWithDaoSupport extends HibernateDaoSupport imple
 		// TODO Auto-generated method stub
 		getHibernateTemplate().persist(user);
 		return true;
+	}
+
+	@Override
+	public List<User> listUserWithSQL() {
+		// TODO Auto-generated method stub
+		List<User> ret = getHibernateTemplate().getSessionFactory().getCurrentSession().createSQLQuery("Select * from user").list();
+		return ret;
 	}
 
 }

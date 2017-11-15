@@ -74,4 +74,10 @@ public class HibernateUserDaoImp implements IUserDao {
 		return true;
 	}
 
+	@Override
+	public List<User> listUserWithSQL() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
