@@ -1,13 +1,15 @@
 package main.java.spring.tdd.dao.dao;
 
-import java.util.List;import org.hibernate.Criteria;
+import java.util.List;
+
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
+import org.springframework.stereotype.Repository;
 
 import main.java.spring.tdd.dao.model.User;
 
-
+@Repository
 public class HibernateUserDaoImpWithDaoSupport extends HibernateDaoSupport implements IUserDao{
 
 	@Autowired
