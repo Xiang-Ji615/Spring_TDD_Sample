@@ -3,17 +3,20 @@ package main.java.spring.tdd.dao.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
+
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Lookup;
 import org.springframework.stereotype.Repository;
 
 import main.java.spring.tdd.dao.model.User;
 
 @Repository
-public class HibernateUserDaoImp implements IUserDao {
+public abstract class HibernateUserDaoImp implements IUserDao {
 	
 	@Autowired
 	SessionFactory sessionFactory;
@@ -79,5 +82,11 @@ public class HibernateUserDaoImp implements IUserDao {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	@Lookup(value="user")
+	@Override
+	public abstract User getUserBean();
+
+
 
 }

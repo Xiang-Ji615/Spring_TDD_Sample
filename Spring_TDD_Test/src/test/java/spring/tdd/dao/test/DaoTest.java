@@ -41,4 +41,9 @@ public class DaoTest {
 		List<User> users = userDao.listUserWithSQL();
 		assertNotNull(users);
 	}
+	
+	@Test
+	public void validateUserBeanLookUpMethod() {
+		assertNotNull(userDao.getUserBean());
+	}
 }

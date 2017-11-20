@@ -14,10 +14,10 @@ public class BeanConfig {
 	@Autowired
 	SessionFactory sessionFactory;
 	
-	@Bean(name= {"hibernateUserDaoImpWithDaoSupport"})
-	public IUserDao getDaoSupportDao() {
-		HibernateUserDaoImpWithDaoSupport dao = new HibernateUserDaoImpWithDaoSupport();
-		dao.setSessionFactory(sessionFactory);
-		return dao;
-	}
+//	@Bean(name= {"hibernateUserDaoImpWithDaoSupport"})
+//	public IUserDao getDaoSupportDao() {
+//		HibernateUserDaoImpWithDaoSupport dao = new HibernateUserDaoImpWithDaoSupport();
+//		dao.setSessionFactory(sessionFactory);
+//		return dao;
+//	}
 }
